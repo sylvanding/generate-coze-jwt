@@ -1,0 +1,17 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020", // 或更新版本
+    "module": "CommonJS", // Netlify Functions 通常使用 CommonJS
+    "outDir": "./dist", // 可选，编译输出目录
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true // 允许导入 json 文件
+    // "types": ["node", "@netlify/functions"] // 确保类型被识别
+  },
+  "include": ["netlify/functions/**/*.ts", "src/**/*.ts"], // 包含你的函数和可能的共享代码
+  "exclude": ["node_modules"]
+}

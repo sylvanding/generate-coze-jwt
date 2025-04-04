@@ -1,0 +1,11 @@
+# netlify.toml
+[build]
+# 如果你的项目主要是静态文件或 SPA，指定发布目录
+# publish = "dist" # 例如 Vue/React build 的输出目录
+# command = "npm run build" # 如果有构建步骤
+
+[functions]
+# 指定包含 serverless functions 的目录
+directory = "netlify/functions"
+# 可选: 指定 Node.js 版本 (通常不需要，Netlify 会用较新的 LTS)
+# node_bundler = "esbuild" # 默认是 esbuild，速度快
