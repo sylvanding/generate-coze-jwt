@@ -39,9 +39,11 @@ const generateCozeJwt = (
 
     // **重要**: 处理可能从环境变量读取的私钥格式问题
     // Netlify 环境变量有时会转义换行符，确保它是正确的 PEM 格式
-    const formattedPrivateKey = privateKey.replace(/\\n/g, "\n");
+    // const formattedPrivateKey = privateKey.replace(/\\n/g, "\n");
     // 或者，如果您使用 Base64 编码存储私钥，您可以这样解码：
-    // const formattedPrivateKey = Buffer.from(privateKey, 'base64').toString('utf-8');
+    const formattedPrivateKey = Buffer.from(privateKey, "base64").toString(
+      "utf-8"
+    );
 
     const token = jwt.sign(payload, formattedPrivateKey, {
       algorithm: "RS256",
