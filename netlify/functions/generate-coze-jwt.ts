@@ -45,8 +45,6 @@ const generateCozeJwt = (
       .toString("utf-8")
       .replace(/\\n/g, "\n");
 
-    console.log("formattedPrivateKey", formattedPrivateKey);
-
     const token = jwt.sign(payload, formattedPrivateKey, {
       algorithm: "RS256",
       header: headers,
